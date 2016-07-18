@@ -6,6 +6,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('/', function () {
+    this.route('repo', { path: '/repo/:repo_id', resetNamespace: true });
+  })
 });
 
 export default Router;

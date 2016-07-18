@@ -1,0 +1,13 @@
+<article class="">
+  <header>
+    <h1>{{ model.name }}</h1>
+    <span>{{ model.description }}</span>
+
+    <h3 class="h6">Open Issues: {{ model.open_issues_count }}</h3>
+    <h3 class="h6">Last Updated: {{ model.updated_at }}</h3>
+  </header>
+  <section>
+    <img class="o-icon u-br--half" src="{{ model.owner.avatar_url }}" alt="{{ model.owner.login }}" />
+  </section>
+</article>
+{{outlet}}
