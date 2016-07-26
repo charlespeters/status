@@ -1,0 +1,27 @@
+@import 'obsidian.css';
+
+.o-layout {
+  align-items: flex-start;
+}
+.o-layout__child {
+  flex: 1 auto;
+  width: 100%;
+  max-width: 21rem;
+  background-color: white;
+}
+
+.c-divider--t {
+  border-top: 1px solid var(--palegray);
+}
+
+.c-divider:not(:last-of-type) {
+  border-right: 1px solid var(--palegray);
+}
+
+
+:root {
+  --headlines: 'Avenir';
+  --body-text: 'SF UI Text';
+  --ff-sans-serif: 'SF UI Text';
+  --ff-default: 'SF UI Text';
+}
