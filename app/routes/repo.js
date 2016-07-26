@@ -1,8 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  afterModel() {
+    this.set('repo', this.modelFor('index'));
+  },
   model(params) {
-    console.log(params);
-    return this.modelFor('index').findBy('id', params.id);
+    return this.store.findRecord('repo', params.id);
   }
 });

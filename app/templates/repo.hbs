@@ -1,13 +1,33 @@
-<article class="">
+<article class="o-container o-container--center">
   <header>
-    <h1>{{ model.name }}</h1>
-    <span>{{ model.description }}</span>
-
-    <h3 class="h6">Open Issues: {{ model.open_issues_count }}</h3>
-    <h3 class="h6">Last Updated: {{ model.updated_at }}</h3>
+    <h1 class="h4">{{ model.name }}</h1>
+    <p class='h6 u-ltgray'>{{ model.description }}</p>
   </header>
   <section>
-    <img class="o-icon u-br--half" src="{{ model.owner.avatar_url }}" alt="{{ model.owner.login }}" />
+    <h2 class="h5">Clone</h2>
+    <code>git clone {{ model.clone_url }}</code>
+  </section>
+  <section class="c-divider--t o-flex o-flex--j--sb o-flex--center--h u-center u-caps small">
+    <div class="c-divider o-col--4/12 u-px2 u-py3">
+      <h6 class="u-w500 u-lh-1">{{ model.open_issues_count}}</h6>
+      <span class="small u-lh-1 u-lt-2 u-ltgray">Issues</span>
+    </div>
+    <div class="c-divider o-col--4/12 u-px2 u-py3">
+      <h6 class="u-w500 u-lh-1">{{ model.forks_count }}</h6>
+      <span class="small u-lh-1 u-lt-2 u-ltgray">Forks</span>
+    </div>
+    <div class="c-divider o-col--4/12 u-px2 u-py3">
+      <h6 class="u-w500 u-lh-1">{{ model.stargazers_count }}</h6>
+      <span class="small u-lh-1 u-lt-2 u-ltgray">Stars</span>
+    </div>
+  </section>
+  <section class="u-center">
+    <img class="o-icon u-br--half u-mxa u-bl u-mb3" src="{{ model.owner.avatar_url }}" alt="{{ model.owner.login }}" />
+    <small>Last Updated: {{moment-format model.updated_at 'MMMM Do YYYY, h:mm:ss a'}}</small>
+  </section>
+
+  <section>
+    {{ model.content }}
   </section>
 </article>
 {{outlet}}
