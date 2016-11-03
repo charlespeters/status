@@ -1,10 +1,10 @@
-import Ember from 'ember';
+import Ember from 'ember'
 
 export default Ember.Route.extend({
-  afterModel() {
-    this.set('repo', this.modelFor('index'));
-  },
-  model(params) {
-    return this.store.findRecord('repo', params.id);
+  ajax: Ember.inject.service(),
+  model ({ repo_id }) {
+    const r = this.get('ajax').request(`https://api.github.com/repos/charlespeters/${repo_id}`)
+    console.log(r)
+    return r
   }
-});
+})
