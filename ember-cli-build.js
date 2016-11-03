@@ -22,10 +22,6 @@ const Plugins = [
 
 module.exports = function build (defaults) {
   const app = new EmberApp(defaults, {
-    fingerprint: {
-      prepend: 'https://statusboard.now.sh/',
-      customHash: null
-    },
     postcssOptions: {
       enabled: true,
       compile: {
