@@ -1,35 +1,35 @@
 <div class="u-w300">
   <header class="u-pt3">
-    <div class="o-flex o-flex--center--h o-flex--j--sb small u-px3">
-      <div class="u-mb3">
-        <h3 class="h6 u-w300 u-sans">
-          {{#link-to 'repo' r}}{{ r.name }}{{/link-to}}
+    <div class="o-flex o-flex--center--h o-flex--j--sb small u-px3 u-mb3">
+      <div class="">
+        <h3 class="h6 u-w400">
+          {{#link-to 'repo' r.name}}{{ r.name }}{{/link-to}}
         </h3>
         <small class='u-ltgray'>{{moment-from-now r.updated_at hideSuffix=false}}</small>
       </div>
-      <a href="{{ r.html_url }}" class="small">GitHub</a>
+      <a href="{{ r.html_url }}" class="small">Repo</a>
     </div>
-    <div class="c-divider--t o-flex o-flex--j--sb o-flex--center--h u-center u-caps small">
-      <div class="c-divider o-col--4/12 u-px2 u-py3">
-        <h6 class="u-w500 u-lh-1">{{ r.open_issues_count}}</h6>
-        <span class="small u-lh-1 u-lt-2 u-ltgray">Issues</span>
+    <div class="c-Divider--t o-flex o-flex--j--sb o-flex--center--h u-center small">
+      <div class="c-Divider o-col--4/12 u-px2 u-py3">
+        <h6 class="u-w500 u-lh-1">{{ r.open_issues_count }}</h6>
+        <span class="small u-lh-1 u-gray">Issues</span>
       </div>
       <div class="c-divider o-col--4/12 u-px2 u-py3">
         <h6 class="u-w500 u-lh-1">{{ r.forks_count }}</h6>
-        <span class="small u-lh-1 u-lt-2 u-ltgray">Forks</span>
+        <span class="small u-lh-1 u-gray">Forks</span>
       </div>
       <div class="c-divider o-col--4/12 u-px2 u-py3">
         <h6 class="u-w500 u-lh-1">{{ r.stargazers_count }}</h6>
-        <span class="small u-lh-1 u-lt-2 u-ltgray">Stars</span>
+        <span class="small u-lh-1 u-gray">Stars</span>
       </div>
     </div>
   </header>
   {{#if r.description}}
-    <div class="small u-ltgray u-bg--palegray u-p3">
-      <p class="u-system u-mb0">
+    <div class="o-flex o-flex--center--h o-flex--j--sb small u-bg--palegray u-p3">
+      <p class="u-mb0">
         {{ r.description }}
       </p>
-      <small>ID: #{{r.id}}</small>
+      <small class='u-py2 u-ml3 u-w700'>{{ r.language }}</small>
     </div>
   {{/if}}
 </div>

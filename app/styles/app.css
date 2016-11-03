@@ -1,27 +1,52 @@
 @import 'obsidian.css';
+@import 'ff.css';
 
-.o-layout {
-  align-items: flex-start;
+.o-Layout {
+  justify-content: center;
 }
-.o-layout__child {
-  flex: 1 auto;
+.o-Layout__child {
+  flex: 1 1 auto;
   width: 100%;
-  max-width: 21rem;
-  background-color: white;
+  max-width: 100%;
 }
 
-.c-divider--t {
+@media (--sm) {
+  .o-Layout__child {
+    max-width: calc(50% - 1rem);
+  }
+}
+
+@media (--lg) {
+  .o-Layout {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .o-Layout__child {
+    max-width: calc(25% - 1rem);
+  }
+}
+
+.c-Card {
+  background: white;
+}
+
+.c-Divider--t {
   border-top: 1px solid var(--palegray);
 }
 
-.c-divider:not(:last-of-type) {
+.c-Divider:not(:last-of-type) {
   border-right: 1px solid var(--palegray);
 }
 
 
+.c-Header { background: var(--color-1); }
+.c-Header__link { color: white; }
+
+
 :root {
-  --headlines: 'Avenir';
-  --body-text: 'SF UI Text';
-  --ff-sans-serif: 'SF UI Text';
-  --ff-default: 'SF UI Text';
+  --headlines: var(--helvetica);
+  --body-text: var(--helvetica);
+  --ff-sans-serif: var(--helvetica);
+  --ff-default: var(--helvetica);
 }

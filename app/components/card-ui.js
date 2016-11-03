@@ -1,5 +1,5 @@
-import Ember from 'ember';
+import Ember from 'ember'
 
 export default Ember.Component.extend({
-  classNames: ['u-br1', 'u-sh--1']
-});
+  classNames: ['c-Card', 'u-br1', 'u-sh--1', 'u-ov--hid']
+})
