@@ -1,11 +1,15 @@
 <article class="o-container o-container--center">
-  <header>
+  <header class="u-mb4">
     <h1 class="h4">{{ model.name }}</h1>
     <p class='h6 u-ltgray'>{{ model.description }}</p>
+    <span>Language {{ model.language }}</span>
   </header>
   <section>
     <h2 class="h5">Clone</h2>
     <code>git clone {{ model.clone_url }}</code>
+  </section>
+  <section>
+    {{ model.contents_url }}
   </section>
   <section class="c-divider--t o-flex o-flex--j--sb o-flex--center--h u-center u-caps small">
     <div class="c-divider o-col--4/12 u-px2 u-py3">
@@ -30,4 +34,5 @@
     {{ model.content }}
   </section>
 </article>
+
 {{outlet}}
