@@ -1,32 +1,38 @@
 /* global require, module */
-const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const EmberApp = require('ember-cli/lib/broccoli/ember-app')
 
-module.exports = function build(defaults) {
+const Plugins = [
+  {
+    module: require('postcss-import')
+  },
+  {
+    module: require('postcss-cssnext'),
+    options: {
+      warnForDuplicates: false,
+      rem: false
+    }
+  },
+  {
+    module: require('cssnano'),
+    options: {
+      mergeRules: false
+    }
+  }
+]
+
+module.exports = function build (defaults) {
   const app = new EmberApp(defaults, {
+    fingerprint: {
+      prepend: 'https://statusboard.now.sh/',
+      customHash: null
+    },
     postcssOptions: {
       enabled: true,
       compile: {
-        plugins: [
-          {
-            module: require('postcss-import'),
-          },
-          {
-            module: require('postcss-cssnext'),
-            options: {
-              warnForDuplicates: false,
-              rem: false,
-            },
-          },
-          {
-            module: require('cssnano'),
-            options: {
-              mergeRules: false,
-            },
-          },
-        ],
-      },
-    },
-  });
+        plugins: Plugins
+      }
+    }
+  })
 
-  return app.toTree();
-};
+  return app.toTree()
+}
