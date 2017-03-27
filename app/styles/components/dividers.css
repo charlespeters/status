@@ -1,0 +1,7 @@
+.c-Divider--t {
+  border-top: 1px solid var(--palegray);
+}
+
+.c-Divider:not(:last-of-type) {
+  border-right: 1px solid var(--palegray);
+}

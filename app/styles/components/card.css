@@ -1,0 +1,13 @@
+.c-Card {
+  background: white;
+  position: relative;
+}
+
+.c-Card__avatar {
+  max-width: 4rem;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -2.5rem;
+}

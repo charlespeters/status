@@ -1,52 +1,32 @@
-@import 'obsidian.css';
+@import 'obsidian.css/lib/settings';
+@import 'obsidian.css/lib/generic';
+
+@import 'obsidian.css/lib/elements';
+
+@import 'obsidian.css/lib/objects/obsidian.icons';
+@import 'obsidian.css/lib/objects/obsidian.flex';
+@import 'obsidian.css/lib/objects/obsidian.containers';
+@import 'obsidian.css/lib/objects/obsidian.grid-columns';
+
+@import './objects/layout.css';
+@import './components/card.css';
+@import './components/dividers.css';
+@import './components/header.css';
+@import './components/readme.css';
+
+@import 'obsidian.css/lib/utilities';
+
+
 @import 'ff.css';
 
-.o-Layout {
-  justify-content: center;
-}
-.o-Layout__child {
-  flex: 1 1 auto;
-  width: 100%;
-  max-width: 100%;
-}
-
-@media (--sm) {
-  .o-Layout__child {
-    max-width: calc(50% - 1rem);
-  }
-}
-
-@media (--lg) {
-  .o-Layout {
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-
-  .o-Layout__child {
-    max-width: calc(25% - 1rem);
-  }
-}
-
-.c-Card {
-  background: white;
-}
-
-.c-Divider--t {
-  border-top: 1px solid var(--palegray);
-}
-
-.c-Divider:not(:last-of-type) {
-  border-right: 1px solid var(--palegray);
-}
-
-
-.c-Header { background: var(--color-1); }
-.c-Header__link { color: white; }
 
 
 :root {
-  --headlines: var(--helvetica);
-  --body-text: var(--helvetica);
-  --ff-sans-serif: var(--helvetica);
-  --ff-default: var(--helvetica);
+  --headlines: inherit;
+  --body-text: inherit;
+  --ff-sans-serif: var(--avenir);
+  --base-border: 1px;
+  --ff-mono: var(--sfmono);
+  --ff-default: var(--avenir);
+  --ff-w: 400;
 }

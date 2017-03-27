@@ -1,38 +1,21 @@
-<article class="o-container o-container--center">
-  <header class="u-mb4">
-    <h1 class="h4">{{ model.name }}</h1>
-    <p class='h6 u-ltgray'>{{ model.description }}</p>
-    <span>Language {{ model.language }}</span>
-  </header>
-  <section>
-    <h2 class="h5">Clone</h2>
-    <code>git clone {{ model.clone_url }}</code>
-  </section>
-  <section>
-    {{ model.contents_url }}
-  </section>
-  <section class="c-divider--t o-flex o-flex--j--sb o-flex--center--h u-center u-caps small">
-    <div class="c-divider o-col--4/12 u-px2 u-py3">
-      <h6 class="u-w500 u-lh-1">{{ model.open_issues_count}}</h6>
-      <span class="small u-lh-1 u-lt-2 u-ltgray">Issues</span>
-    </div>
-    <div class="c-divider o-col--4/12 u-px2 u-py3">
-      <h6 class="u-w500 u-lh-1">{{ model.forks_count }}</h6>
-      <span class="small u-lh-1 u-lt-2 u-ltgray">Forks</span>
-    </div>
-    <div class="c-divider o-col--4/12 u-px2 u-py3">
-      <h6 class="u-w500 u-lh-1">{{ model.stargazers_count }}</h6>
-      <span class="small u-lh-1 u-lt-2 u-ltgray">Stars</span>
-    </div>
-  </section>
-  <section class="u-center">
-    <img class="o-icon u-br--half u-mxa u-bl u-mb3" src="{{ model.owner.avatar_url }}" alt="{{ model.owner.login }}" />
-    <small>Last Updated: {{moment-format model.updated_at 'MMMM Do YYYY, h:mm:ss a'}}</small>
-  </section>
+<article class="o-container o-container--center o-flex o-flex--wrap u-py4">
 
-  <section>
-    {{ model.content }}
-  </section>
+
+  <div class="o-col--12/12 o-col--8/12@md">
+    <section>
+      {{readme-area class='c-README' content=model.readme.content}}
+    </section>
+  </div>
+
+  <div class=" u-pl4@md o-col--12/12 o-col--4/12@md">
+
+    {{card-repo className='u-mb4' r=model.repo }}
+
+    <section class='u-mb4'>
+      <h2 class="h5">Clone</h2>
+      <code class='small'>git clone {{ model.repo.clone_url }}</code>
+    </section>
+  </div>
 </article>
 
 {{outlet}}

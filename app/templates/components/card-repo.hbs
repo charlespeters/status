@@ -1,13 +1,14 @@
-<div>
-  <header class="u-pt3">
-    <div class="o-flex o-flex--center--h o-flex--j--sb small u-px3 u-mb3">
-      <div class="">
-        <h3 class="h6 u-w400">
-          {{#link-to 'repo' r.name}}{{ r.name }}{{/link-to}}
-        </h3>
-        <small class='u-ltgray'>{{moment-from-now r.updated_at hideSuffix=false}}</small>
+<div class="c-Card u-mt5 u-br1 u-sh--1 {{className}}">
+  <img class="c-Card__avatar u-br--half u-bl" src="{{ r.owner.avatar_url }}" alt="{{ r.owner.login }}" />
+  <header class="u-pt4">
+    <div class="u-px3">
+      <div class="o-flex o-flex--center--h o-flex--j--sb small u-mb3">
+        <div class="">
+          <h3 class="h6 u-w400">{{ r.name }}</h3>
+          <small class='u-ltgray'>{{moment-from-now r.updated_at hideSuffix=false}}</small>
+        </div>
+        <a href="{{ r.html_url }}" class="small">Repo</a>
       </div>
-      <a href="{{ r.html_url }}" class="small">Repo</a>
     </div>
     <div class="c-Divider--t o-flex o-flex--j--sb o-flex--center--h u-center small">
       <div class="c-Divider o-col--4/12 u-px2 u-py3">

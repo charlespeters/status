@@ -1,0 +1,32 @@
+.c-README::before {
+  content: '';
+  display: block;
+  width: 7rem;
+  max-width: 100%;
+  height: 2px;
+  margin-bottom: 1rem;
+  background: var(--color-1);
+}
+
+.c-README h1 { font-size: var(--headline-1-sm); }
+.c-README h2 { font-size: var(--headline-3-sm); }
+.c-README h3 { font-size: var(--headline-4-sm); }
+.c-README h4 { font-size: var(--headline-5-sm); }
+
+
+.c-README h1,
+.c-README h2,
+.c-README h3,
+.c-README h4,
+.c-README h5,
+.c-README h6 {
+  font-family: inherit;
+  font-weight: 500;
+  margin-bottom: .75rem;
+}
+
+
+.c-README p {
+  font-family: inherit;
+  font-weight: 400;
+}
